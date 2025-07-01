@@ -167,11 +167,13 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
+    width: 90%;
+    max-width: 500px;
     text-align: center;
     z-index: 15;
     opacity: 0;
     transition: all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    pointer-events: none;
 }
 
 .text-container.visible {
@@ -181,18 +183,15 @@ body {
 
 .main-text {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(4rem, 12vw, 8rem);
+    font-size: clamp(2.5rem, 8vw, 5rem);
     font-weight: 700;
-    color: #ffffff;
-    text-shadow: 
-        0 0 20px rgba(236, 72, 153, 0.8),
-        0 0 40px rgba(236, 72, 153, 0.6),
-        0 0 60px rgba(236, 72, 153, 0.4),
-        2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-bottom: 1.5rem;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(236, 72, 153, 0.8), 0 0 40px rgba(236, 72, 153, 0.6), 0 0 60px rgba(236, 72, 153, 0.4), 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 1.2rem;
     letter-spacing: 0.08em;
     position: relative;
     filter: drop-shadow(0 0 15px rgba(236, 72, 153, 0.7));
+    background: none;
 }
 
 .main-text::before {
@@ -481,6 +480,25 @@ body {
 }
 
 /* Responsive Design */
+@media (max-width: 600px) {
+    .main-text {
+        font-size: clamp(1.2rem, 8vw, 2.2rem);
+        margin-bottom: 0.7rem;
+    }
+    .text-container {
+        max-width: 95vw;
+        padding: 0 5vw;
+    }
+    .caplet {
+        width: 4px;
+        height: 10px;
+    }
+    .heart-glow {
+        width: 180px;
+        height: 180px;
+    }
+}
+
 @media (max-width: 768px) {
     .main-text {
         font-size: clamp(2.5rem, 12vw, 5rem);
